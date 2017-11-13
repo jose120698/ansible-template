@@ -1,0 +1,6 @@
+---
+- name: Deploy App
+  hosts: "{{ env }}&&app_deploy"
+  become: True
+  roles:
+    - app_deploy

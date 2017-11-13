@@ -1,0 +1,22 @@
+---
+# Must specify env when calling this playbook, which will limit the scope of the run
+- name:  Verify env variable
+  hosts: localhost
+  connection: local
+  become: False
+  gather_facts: False
+  tasks:
+    - name: Check if env defined
+      fail: msg="Variable 'env' must be defined."
+      when: env is not defined
+      tags: always
+    - name: Targetted environment
+      debug: var=env
+      tags: always
+    - name: Ansible user
+      debug: var=ansible_user
+      tags: always
+
+# Include your playbooks below, order may be important
+## Note that this is using the intersection of the HostType/Docker and env groups.
+# - include: HostType-app_deploy.yml

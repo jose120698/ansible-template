@@ -1,0 +1,9 @@
+ansible.log*
+/nbproject/*
+/cache/*
+/.idea/*
+*.pyc
+*.swp
+*.retry
+/.vagrant/*
+.DS_Store

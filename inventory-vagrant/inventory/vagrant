@@ -1,0 +1,7 @@
+### env
+[vagrant]
+vagrant ansible_connection=local
+
+### HostType
+[deploy_app]
+#vagrant
